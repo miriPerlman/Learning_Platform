@@ -25,7 +25,7 @@
 }
 
 .login-avatar {
-  background-color: #205c3b !important; /* ירוק כהה */
+  background-color: #205c3b !important; 
   width: 60px !important;
   height: 60px !important;
   margin-bottom: 16px !important;
@@ -62,17 +62,17 @@
   color: #213547 !important;
   font-weight: 600 !important;
   letter-spacing: 1px !important;
-  caret-color: #205c3b !important; /* ירוק כהה */
+  caret-color: #205c3b !important; 
 }
 
 .login-textfield input::placeholder {
-  color: #205c3b !important; /* ירוק כהה */
+  color: #205c3b !important; 
   opacity: 0.5 !important;
   font-weight: 100 !important;
 }
 
 .login-textfield label {
-  color: #205c3b !important; /* ירוק כהה */
+  color: #205c3b !important;
   font-weight: 700 !important;
 }
 
@@ -81,7 +81,7 @@
 }
 
 .login-textfield .MuiOutlinedInput-notchedOutline {
-  border-color: #205c3b !important; /* ירוק כהה */
+  border-color: #205c3b !important; 
   border-radius: 0 !important;
 }
 
@@ -95,8 +95,8 @@
 }
 
 .login-guest-btn {
-  border-color: #205c3b !important; /* ירוק כהה */
-  color: #205c3b !important; /* ירוק כהה */
+  border-color: #205c3b !important; 
+  color: #205c3b !important; 
   background: transparent !important;
   font-weight: 700 !important;
   font-family: 'Varela Round, Alef, Arial, sans-serif' !important;
@@ -107,7 +107,7 @@
 }
 
 .login-guest-btn:hover {
-  background: #205c3b11 !important; /* ירוק כהה */
+  background: #205c3b11 !important; 
   color: #213547 !important;
   border-color: #205c3b !important;
 }
@@ -123,15 +123,15 @@
 }
 
 .login-signin-btn:hover {
-  background: #17482c !important; /* ירוק כהה יותר */
+  background: #17482c !important; 
 }
 
 .login-admin-btn {
   position: absolute !important;
   top: 20% !important;
   right: 10% !important;
-  border-color: #205c3b !important; /* ירוק כהה */
-  color: #205c3b !important; /* ירוק כהה */
+  border-color: #205c3b !important; 
+  color: #205c3b !important; 
   font-weight: 700 !important;
   font-family: 'Varela Round, Alef, Arial, sans-serif' !important;
   font-size: 1em !important;
@@ -141,7 +141,7 @@
 }
 
 .login-admin-btn:hover {
-  background: #205c3b11 !important; /* ירוק כהה */
+  background: #205c3b11 !important;
   color: #213547 !important;
 }
 
@@ -157,7 +157,7 @@
   z-index: 3000;
   border-radius: 8px;
   min-width: 220px;
-  max-width: 300px; /* קטן יותר מה-login-box */
+  max-width: 300px; 
   width: 100%;
   margin-top: 0 !important;
 }
@@ -168,11 +168,11 @@
   color: #213547 !important;
   font-weight: 600 !important;
   letter-spacing: 1px !important;
-  caret-color: #205c3b !important; /* ירוק כהה */
+  caret-color: #205c3b !important; 
 }
 
 .login-admin-textfield label {
-  color: #205c3b !important; /* ירוק כהה */
+  color: #205c3b !important; 
   font-weight: 700 !important;
 }
 
@@ -181,7 +181,7 @@
 }
 
 .login-admin-textfield .MuiOutlinedInput-notchedOutline {
-  border-color: #205c3b !important; /* ירוק כהה */
+  border-color: #205c3b !important; 
   border-radius: 0 !important;
 }
 
@@ -199,7 +199,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(33, 53, 71, 0.35); /* כהה חצי שקוף */
+  background: rgba(33, 53, 71, 0.35); 
   z-index: 2500;
 }
 

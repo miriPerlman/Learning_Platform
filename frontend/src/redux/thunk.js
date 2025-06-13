@@ -129,8 +129,7 @@ export const getSubCategoryById = createAsyncThunk("subCategories/getById",
    const data = await response.json();
    return data;
 });
-export const getAllPromptsByPaging = createAsyncThunk(
-    "prompts/getAllWithPaging", 
+export const getAllPromptsByPaging = createAsyncThunk("prompts/getAllWithPaging", 
     async ({ page, filter }, { rejectWithValue }) => {
         try {
             const response = await fetch(`http://localhost:5091/api/Prompt?pageNumber=${page}&pageSize=9&filterText=${filter}`);

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react"; 
-import { getAllPrompts, getAllPromptsByPaging, getCategoryById, getSubCategoryById, getUserById } from "../redux/thunk"; // ודאי שה-thunk נקרא getAllPrompts
+import { getAllPromptsByPaging, getCategoryById, getSubCategoryById, getUserById } from "../redux/thunk"; // ודאי שה-thunk נקרא getAllPrompts
 import '../components/css_files/Admin.css';
 import Avatar from '@mui/material/Avatar';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
@@ -57,21 +57,17 @@ const Admin = () => {
                 Admin Dashboard
             </Typography>
             <Paper elevation={0} className="admin-paper">
-                
-                {/* 3. הוספת שדה החיפוש וכפתורי הניווט */}
                 <div className="controls-container" style={{ padding: '20px', borderBottom: '1px solid #eee' }}>
                     <input 
                         type="text"
                         placeholder="Search in prompts..."
                         value={promptFilter}
-                        // כל הקלדה תעדכן את ה-state של הפילטר
                         onChange={(e) => {
                             setPromptFilter(e.target.value);
                             setPromptPage(1); 
                         }}
                         style={{ marginRight: '20px', padding: '8px' }}
                     />
-                    
                     <button onClick={() => setPromptPage(p => p - 1)} disabled={promptPage === 1}>
                         Previous
                     </button>
@@ -80,7 +76,6 @@ const Admin = () => {
                         Next
                     </button>
                 </div>
-
 
                 {allPrompt && allPrompt.length > 0 ? (
                     allPrompt.map((prompt) => (

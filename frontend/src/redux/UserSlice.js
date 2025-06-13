@@ -6,7 +6,7 @@ const UserSlice = createSlice({
     initialState: {
         UserList:[],
         adminPassword:"",
-        usersById: {} // <--- שינוי כאן
+        usersById: {} 
     },
     reducers: {
        

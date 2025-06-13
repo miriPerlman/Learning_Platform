@@ -1,8 +1,9 @@
-import React from 'react';
 import { Box, Typography, Avatar, Paper } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import { Link } from 'react-router-dom';
-import '../components/css_files/about.css'; 
+import '../components/css_files/about.css';
+
+
 const About = () => {
   return (
     <Box className="signup-root">

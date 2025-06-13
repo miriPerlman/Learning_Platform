@@ -21,7 +21,7 @@ import '../components/css_files/logIn.css';
 const THEME = createTheme({
   palette: {
     primary: {
-      main: '#205c3b', // ירוק כהה
+      main: '#205c3b', 
       contrastText: '#fff',
     },
     secondary: {
@@ -49,6 +49,7 @@ const LogIn = () => {
   const dispatch = useDispatch();
 
   const handlePassword = (e) => setPassword(e.target.value);
+
   const handleAdminPassword = (e) => {
     setAdminPassword(e.target.value);
     setAdminError('');
@@ -75,11 +76,9 @@ const LogIn = () => {
       setMessage('Error: ' + error.message);
     }
   };
-
   const handleAdminClick = () => {
     setShowAdminInput(true);
   };
-
   const checkPassword = async (password) => {
     try {
       const resultAction = await dispatch(checkAdminPassword(password));

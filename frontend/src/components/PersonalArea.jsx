@@ -3,10 +3,8 @@ import { Navigate, useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { GetAllCategories, getPromptsUserById, getUserById } from "../redux/thunk";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import Button from '@mui/material/Button'; // ייבוא כפתור מ-Material UI
-
-// ייבוא קובץ ה-CSS החדש
-import '../components/css_files/PersonalAre.css'; // ודא שהנתיב נכון
+import Button from '@mui/material/Button'; 
+import '../components/css_files/PersonalAre.css'; 
 
 const PersonalArea = () => {
     const { name } = useParams();
@@ -54,7 +52,6 @@ const PersonalArea = () => {
 
     return (
         <div className="personal-area-root">
-            {/* כפתור שם משתמש בצד ימין למעלה */}
             <Button
                 className="user-display-button"
                 variant="outlined"

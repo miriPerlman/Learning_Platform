@@ -8,7 +8,7 @@ const PromptSlice = createSlice({
         PromptsOfUSer: [],
         PromptForSend: [],
         promptsWithPaging: [],
-        status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
+        status: 'idle',
         error: null,
     },
     reducers: {
@@ -45,16 +45,18 @@ const PromptSlice = createSlice({
                 state.allPrompts = [];
             })
              .addCase(getAllPromptsByPaging.pending, (state) => {
-                state.status = 'loading'; // בזמן טעינה
+                state.status = 'loading'; 
                 state.error = null;
             })
             .addCase(getAllPromptsByPaging.fulfilled, (state, action) => {
-                state.status = 'succeeded'; // הטעינה הצליחה
-                state.promptsWithPaging = action.payload; // עדכון הרשימה במידע שחזר מהשרת
+                state.status = 'succeeded';
+                state.promptsWithPaging = action.payload; 
+                console.log("Prompts with paging fetched successfully:", action.payload);
             })
             .addCase(getAllPromptsByPaging.rejected, (state, action) => {
-                state.status = 'failed'; // הטעינה נכשלה
-                state.error = action.payload; // שמירת הודעת השגיאה
+                state.status = 'failed'; 
+                state.error = action.payload; 
+                console.error("Error fetching prompts with paging:", action.payload);
             });
     }
 

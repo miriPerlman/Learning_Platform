@@ -4,9 +4,9 @@ import { getCategoryById, getSubCategoryById, GetAllCategories, GetSubCategories
 const CategorySlice = createSlice({
     name: "categories",
     initialState: {
+        CategoriesList: [],   
+        SubCategoriesList: {$values:[]},
         categoriesById: {},
-        CategoriesList: [],        // <-- שינוי כאן
-        SubCategoriesList: {$values:[]},     // <-- שינוי כאן
         subCategoriesById: {},
         loading: false,
         error: null,

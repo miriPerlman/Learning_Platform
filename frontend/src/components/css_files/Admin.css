@@ -1,6 +1,4 @@
-/* =================================== */
-/* Admin Dashboard Container      */
-/* =================================== */
+
 .invitationContainer {
   width: 100%;
   min-height: calc(100vh - 90px);
@@ -12,9 +10,6 @@
   background: linear-gradient(135deg, #f4f4f7 0%, #e9e9f2 100%);
 }
 
-/* =================================== */
-/* Dashboard Header          */
-/* =================================== */
 .admin-avatar {
   background-color: #205c3b !important;
   width: 70px !important;
@@ -36,49 +31,33 @@
   margin-bottom: 24px !important;
 }
 
-/* =================================== */
-/* Cards Grid and Controls Container */
-/* =================================== */
 .admin-paper {
-  /* --- הופכים את הקונטיינר הראשי לרשת --- */
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* יוצר 3 עמודות ברוחב שווה */
-  gap: 24px;              
+  grid-template-columns: repeat(3, 1fr); 
+   gap: 24px;              
   width: 100%;
   max-width: 1120px;      
   background: transparent !important;
   box-shadow: none !important;
-  /* מיישר את כל הפריטים (כולל הפקדים) למרכז */
   justify-items: center;
 }
 
-/* =================================== */
-/* Controls Container (New)      */
-/* =================================== */
 .controls-container {
-  /* --- זהו הפתרון המרכזי --- */
-  /* ההגדרה הזו גורמת לאלמנט הזה להתפרס על פני כל 3 העמודות של הרשת */
-  grid-column: 1 / -1;
-
-  /* עיצוב נוסף כדי למרכז את הפקדים בתוך השורה שלהם */
+   grid-column: 1 / -1;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 16px;
-  padding-bottom: 24px; /* רווח תחתון מהכרטיסים */
+  padding-bottom: 24px; 
 }
 
-/* =================================== */
-/* Individual Card Style        */
-/* =================================== */
 .invitation-card {
   background: #ffffff; 
   border: 1px solid #e0e0e0;
   border-radius: 12px;
   box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
   padding: 20px;
-  /* הוסר max-width כדי שהרשת תשלוט ברוחב הכרטיס */
-  width: 100%; /* הכרטיס יתפוס 100% מהתא שלו ברשת */
+  width: 100%; 
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -94,9 +73,6 @@
   width: 100%;
 }
 
-/* =================================== */
-/* Card Content Typography      */
-/* =================================== */
 .invitation-detail h3 {
   font-size: 1rem;
   font-weight: 500;

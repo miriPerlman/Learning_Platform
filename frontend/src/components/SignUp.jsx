@@ -9,14 +9,15 @@ import '../components/css_files/signUp.css';
 const SignUp = () => {
     const dispatch = useDispatch();
     const [username, setUsername] = useState('');
+    const [loading, setLoading] = useState(false);
     const [phone, setPhone] = useState('');
     const { id } = useParams();
     const navigate = useNavigate();
-    const [loading, setLoading] = useState(false);
+    
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (loading) return; // לא לאפשר קריאה כפולה
+        if (loading) return;
         setLoading(true);
         try {
             await dispatch(SignUoToUsres({ Id: id, Name: username, Phone: phone }));

@@ -29,9 +29,9 @@ namespace BL.Services
             this.blSubCategory = blSubCategory;
         }
         // העברת הפרמטרים לקריאה לשכבת ה-DAL
-        public Task<List<Prompt>> GetAllAsync(int pageNumber, int pageSize, string? filterText)
+        public async Task<List<Prompt>> GetAllAsync(int pageNumber, int pageSize, string? filterText)
         {
-            return prompts.GetAllAsync(pageNumber, pageSize, filterText);
+            return await prompts.GetAllAsync(pageNumber, pageSize, filterText);
         }
         public async Task<Dal.Models.Prompt> addPrompt(int user_id, int category_id, int sub_category_id, string prompt)
         {

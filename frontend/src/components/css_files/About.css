@@ -10,7 +10,7 @@
 
 .about-box {
   width: 100%;
-  max-width: 350px;
+  max-width: 500px;
   padding: 32px 20px;
   border-radius: 12px;
   background: #f5fff7;
@@ -27,6 +27,14 @@
   height: 70px !important;
   margin-bottom: 16px !important;
   box-shadow: 0 2px 8px #205c3b33 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-icon {
+  font-size: 44px !important;
+  color: #fff !important;
 }
 
 .about-title {
@@ -60,13 +68,6 @@
   margin-bottom: 6px !important;
 }
 
-.about-categories {
-  color: #388e3c !important;
-  font-weight: 600 !important;
-  text-align: left !important;
-  margin-bottom: 10px !important;
-}
-
 .about-list-item {
   color: #205c3b !important;
   font-weight: 500 !important;
@@ -78,3 +79,10 @@
   color: #388e3c !important;
   text-align: center !important;
   margin-top: 18px !important;
+}
+
+.about-link {
+  color: #205c3b !important;
+  font-weight: 700 !important;
+
+  }

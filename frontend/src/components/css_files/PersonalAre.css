@@ -1,8 +1,5 @@
-/* =================================== */
-/* Main Page Container            */
-/* =================================== */
+
 .personal-area-root {
-  /* רקע זהה לדף הניהול */
   width: 100%;
   min-height: calc(100vh - 90px);
   padding:0px 24px 24px 24px;
@@ -14,11 +11,7 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* =================================== */
-/* Top-Right User Button         */
-/* =================================== */
 .user-display-button {
-  /* עיצוב חדש שמתאים לסגנון הבהיר */
   position: fixed !important;
   top: 24px !important;
   right: 24px !important;
@@ -49,11 +42,7 @@
   margin-right: 8px !important;
 }
 
-/* =================================== */
-/* Typography & Main Buttons      */
-/* =================================== */
 .welcome-title {
-  /* עיצוב זהה לכותרת הראשית בדף הניהול */
   font-weight: 800 !important;
   letter-spacing: 2px !important;
   margin-bottom: 16px !important;
@@ -86,9 +75,6 @@
   color: #ffffff;
 }
 
-/* =================================== */
-/* Category Cards               */
-/* =================================== */
 .category-container {
   /* זהה ל-admin-paper */
   display: flex;
@@ -123,7 +109,6 @@
 }
 
 .card-title {
-  /* כמו h3 ראשי בכרטיס הניהול */
   color: #205c3b;
   font-weight: 600;
   font-size: 1.5rem;
@@ -131,7 +116,6 @@
 }
 
 .insert-button {
-  /* כפתור פעולה ראשי */
   background-color: #205c3b;
   color: #ffffff;
   border: none;
@@ -146,9 +130,6 @@
   background-color: #1a4a2f;
 }
 
-/* =================================== */
-/* Popup & Overlay              */
-/* =================================== */
 .popup-overlay {
   position: fixed;
   top: 0;

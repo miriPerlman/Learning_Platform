@@ -4,9 +4,7 @@ import { getCategoryById, GetSubCategories, getUserById } from "../redux/thunk";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "@mui/material";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-
-// ייבוא קובץ ה-CSS החדש
-import './css_files/Category.css'; // ודא שהנתיב נכון
+import './css_files/Category.css'; 
 
 const Category = () => {
     const { categoryId, name } = useParams();
@@ -43,7 +41,6 @@ const Category = () => {
         navigate(`/SubCategory/${categoryId}/${subCategory.id}/${name}`);
     };
 
-    // הפונקציה נשארת כפי שהיא, ללא שינוי
     function findById(data, id) {
         if (data.$id === id) return data;
         if (data.$ref === id) return data;
@@ -53,7 +50,6 @@ const Category = () => {
                 if (result) return result;
             }
         }
-        // ... שאר הלוגיקה של הפונקציה
         return null;
     }
 
@@ -77,8 +73,6 @@ const Category = () => {
                         const subCategoryData = subCat.hasOwnProperty('$ref')
                             ? findById(subCategories, subCat.$ref)
                             : subCat;
-                        
-                        // בדיקה נוספת למקרה שהאובייקט לא נמצא
                         if (!subCategoryData) return null;
 
                         return (
