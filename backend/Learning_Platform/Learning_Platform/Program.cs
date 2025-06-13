@@ -3,10 +3,19 @@ using BL.Services;
 using BL;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddControllers();
+
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+    options.JsonSerializerOptions.MaxDepth = 64;
+});
+
 builder.Services.AddEndpointsApiExplorer();
-//builder.Services.AddSwaggerGen();
+
+builder.Services.AddSwaggerGen();
+
 builder.Services.AddSingleton<IBLManager, BlManager>();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAllOrigins",
@@ -16,12 +25,14 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
-//if (app.Environment.IsDevelopment())
-//{
-//    app.UseSwagger();
-//    app.UseSwaggerUI();
-//}
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.UseCors("AllowAllOrigins");
+
 app.MapControllers();
+
 app.Run();

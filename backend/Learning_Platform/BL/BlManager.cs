@@ -1,14 +1,14 @@
-﻿using System;
+﻿using BL.Api;
+using BL.Services;
+using Dal;
+using Dal.Api;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using BL.Api;
-using BL.Services;
-using Dal;
-using Dal.Api;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace BL
 {
@@ -20,7 +20,7 @@ namespace BL
         public IBLPrompt? BlPrompt{ get; }
 
 
-        public BlManager()
+        public BlManager(IConfiguration configuration)
         {
             ServiceCollection services = new ServiceCollection();
             services.AddSingleton<IDal, DalManager>();
@@ -28,6 +28,7 @@ namespace BL
             services.AddSingleton<IBLUser, BlUserService>();
             services.AddSingleton<IBLSubCategory, BlSubCategoryService>();
             services.AddSingleton<IBLPrompt, BlPromptService>();
+            services.AddSingleton<IConfiguration>(configuration);
             ServiceProvider serviceProvider = services.BuildServiceProvider();
             BlCategory = serviceProvider.GetService<IBLCategory>();
             BlUser = serviceProvider.GetService<IBLUser>();

@@ -15,9 +15,9 @@ namespace BL.Services
         public BlUserService(IDal dal) {
             user = dal.users;
         }
-        public User addUser(User u)
+        public async Task<User> addUser(User u)
         {
-            var users = user.Read();
+            var users =await user.Read();
             var foundUser = users.FirstOrDefault(us => us.Id == u.Id);
             if (foundUser != null) {
                 throw new Exception("this user is already exist at the system");
@@ -25,9 +25,9 @@ namespace BL.Services
             user.Create(u);
             return u;
         }
-        public User getUserById(int id)
+        public async Task<User> getUserById(int id)
         {
-            var users = user.Read();
+            var users =await user.Read();
             var foundUser=users.FirstOrDefault(u=>u.Id== id);
             return foundUser;
         }

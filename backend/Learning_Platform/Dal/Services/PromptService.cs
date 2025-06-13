@@ -1,5 +1,6 @@
 ﻿using Dal.Api;
 using Dal.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,23 +16,37 @@ namespace Dal.Services
         {
             this.db = db;
         }
-        public void Create(Prompt item)
+        public async Task<List<Prompt>> GetAllAsync(int pageNumber, int pageSize, string? filterText)
         {
-            db.Add(item);
-            db.SaveChanges();
-        }
+            var query = db.Prompts.AsQueryable();
 
-        public void Delete(Prompt item)
+            if (!string.IsNullOrEmpty(filterText))
+            {
+                query = query.Where(p => p.Prompt1.Contains(filterText));
+            }
+
+            return await query
+                .OrderByDescending(p => p.UserId) 
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+        }
+        public async Task Create(Prompt item)
+        {
+            await db.AddAsync(item);
+            await db.SaveChangesAsync();
+        }
+        public Task Delete(Prompt item)
         {
             throw new NotImplementedException();
         }
 
-        public List<Prompt> Read()
+        public async Task<List<Prompt>> Read()
         {
-            return db.Prompts.ToList();
+            return await db.Prompts.ToListAsync();
         }
 
-        public void UpDate(Prompt item)
+        public async Task UpDate(Prompt item)
         {
             throw new NotImplementedException();
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dal.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,7 @@ namespace BL.Api
 {
     public interface IBLCategory
     {
+        public Task<List<Category>> GetCategories();
+        public Task<Category> GetCategoryById(int id);
     }
 }

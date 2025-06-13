@@ -1,5 +1,6 @@
 ﻿using Dal.Api;
 using Dal.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,23 +15,23 @@ namespace Dal.Services
         public CategoryService(LearningPlatformContext db) { 
             this.db = db;
         }
-        public void Create(Category item)
+        public async Task Create(Category item)
         {
-            db.Add(item);
-            db.SaveChanges();
+            await db.AddAsync(item);
+            await  db.SaveChangesAsync();
         }
 
-        public void Delete(Category item)
+        public Task Delete(Category item)
         {
             throw new NotImplementedException();
         }
 
-        public List<Category> Read()
+        public async Task<List<Category>> Read()
         {
-            return db.Categories.ToList();
+            return await db.Categories.ToListAsync();
         }
 
-        public void UpDate(Category item)
+        public async Task UpDate(Category item)
         {
             throw new NotImplementedException();
         }

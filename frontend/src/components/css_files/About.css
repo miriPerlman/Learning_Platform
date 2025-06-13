@@ -1,0 +1,80 @@
+.about-root {
+  min-height: calc(100vh - 110px);
+  width: 100vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 90px;
+  padding-bottom: 24px;
+}
+
+.about-box {
+  width: 100%;
+  max-width: 350px;
+  padding: 32px 20px;
+  border-radius: 12px;
+  background: #f5fff7;
+  border: 2px solid #205c3b;
+  box-shadow: 0 4px 24px 0 rgba(32,92,59,0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-avatar {
+  background-color: #205c3b !important;
+  width: 70px !important;
+  height: 70px !important;
+  margin-bottom: 16px !important;
+  box-shadow: 0 2px 8px #205c3b33 !important;
+}
+
+.about-title {
+  font-weight: 800 !important;
+  letter-spacing: 2px !important;
+  margin-bottom: 16px !important;
+  color: #205c3b !important;
+  text-shadow: 0 2px 8px #205c3b22 !important;
+  text-align: center;
+}
+
+.about-subtitle {
+  margin-bottom: 18px !important;
+  font-weight: 500 !important;
+  opacity: 0.85 !important;
+  text-align: center !important;
+  color: #388e3c !important;
+}
+
+.about-paper {
+  background: transparent !important;
+  box-shadow: none !important;
+  margin-top: 8px !important;
+  width: 100%;
+}
+
+.about-list-title {
+  color: #205c3b !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+  margin-bottom: 6px !important;
+}
+
+.about-categories {
+  color: #388e3c !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+  margin-bottom: 10px !important;
+}
+
+.about-list-item {
+  color: #205c3b !important;
+  font-weight: 500 !important;
+  text-align: left !important;
+  margin-bottom: 6px !important;
+}
+
+.about-footer {
+  color: #388e3c !important;
+  text-align: center !important;
+  margin-top: 18px !important;

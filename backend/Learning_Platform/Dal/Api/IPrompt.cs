@@ -9,5 +9,6 @@ namespace Dal.Api
 {
     public interface IPrompt:ICrud<Prompt>
     {
+        Task<List<Prompt>> GetAllAsync(int pageNumber, int pageSize, string? filterText);
     }
 }

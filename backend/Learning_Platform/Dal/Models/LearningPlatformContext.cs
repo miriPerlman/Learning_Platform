@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Dal.Models;
 
 public partial class LearningPlatformContext : DbContext
 {
-    public LearningPlatformContext()
+    private readonly string? ConnectionString;
+    public LearningPlatformContext(IConfiguration configuration)
     {
-    }
-
-    public LearningPlatformContext(DbContextOptions<LearningPlatformContext> options)
-        : base(options)
-    {
+        ConnectionString = configuration["ConnectionStrings:LearningPlatform"];
     }
 
     public virtual DbSet<Category> Categories { get; set; }
@@ -24,8 +22,7 @@ public partial class LearningPlatformContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Learning_Platform\\backend\\Learning_Platform\\Dal\\database\\LearningPlatformData.mdf; Integrated Security=True; Timeout=30");
+        => optionsBuilder.UseSqlServer(ConnectionString);
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

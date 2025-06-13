@@ -1,5 +1,6 @@
 ﻿using Dal.Api;
 using Dal.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,24 +14,24 @@ namespace Dal.Services
         LearningPlatformContext db;
         public UserService(LearningPlatformContext db) {
                this.db = db;
-        }    
-        public void Create(User item)
+        }
+        public async Task Create(User item)
         {
-           db.Add(item);
-            db.SaveChanges();
+            await db.AddAsync(item);
+            await db.SaveChangesAsync();
         }
 
-        public void Delete(User item)
+        public Task Delete(User item)
         {
             throw new NotImplementedException();
         }
 
-        public List<User> Read()
+        public async Task<List<User>> Read()
         {
-            return db.Users.ToList();
+            return await db.Users.ToListAsync();
         }
 
-        public void UpDate(User item)
+        public async Task UpDate(User item)
         {
             throw new NotImplementedException();
         }

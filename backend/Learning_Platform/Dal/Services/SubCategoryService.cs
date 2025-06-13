@@ -1,5 +1,6 @@
 ﻿using Dal.Api;
 using Dal.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,23 +16,21 @@ namespace Dal.Services
         {
             this.db = db;
         }
-        public void Create(SubCategory item)
+        public async Task Create(SubCategory item)
         {
-            db.Add(item);
-            db.SaveChanges();
+            await db.AddAsync(item);
+            await db.SaveChangesAsync();
         }
 
-        public void Delete(SubCategory item)
+        public Task Delete(SubCategory item)
         {
             throw new NotImplementedException();
         }
-
-        public List<SubCategory> Read()
+        public async Task<List<SubCategory>> Read()
         {
-            return db.SubCategories.ToList();
+            return await db.SubCategories.ToListAsync();
         }
-
-        public void UpDate(SubCategory item)
+        public async Task UpDate(SubCategory item)
         {
             throw new NotImplementedException();
         }

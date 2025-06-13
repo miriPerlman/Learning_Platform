@@ -2,6 +2,7 @@
 using Dal.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Learning_Platform.Controllers
 {
@@ -10,20 +11,30 @@ namespace Learning_Platform.Controllers
     public class UserController : ControllerBase
     {
         IBLUser UserAction;
-        public UserController(IBLManager bLManager) {
+        private readonly string AdminPassword;
+        public UserController(IBLManager bLManager, IConfiguration configuration) {
             UserAction = bLManager.BlUser;
+            AdminPassword = configuration["AdminPassword"];
         }
         [HttpPost("register")]
         public async Task<ActionResult<User>> Register(User user)
         {
-            UserAction.addUser(user);
-            return Ok(user);
+            try
+            {
+                await UserAction.addUser(user);
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message.Contains("already exist"))
+                    return Conflict(new { message = ex.Message });
+                return StatusCode(500, new { message = ex.Message });
+            }
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
-            var user = UserAction.getUserById(id);
-            if (user == null) return NotFound("this id is not exist at the system.");
+            var user =await UserAction.getUserById(id);
             return Ok(user);
         }
 
@@ -38,6 +49,18 @@ namespace Learning_Platform.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+        }
+        [HttpGet("check-admin-password/{password}")]
+        public IActionResult CheckAdminPassword( string password)
+        {
+            if (password == AdminPassword)
+            {
+                return Ok(new { isCorrect=true});
+            }
+            else
+            {
+                return Unauthorized(new { isCorrect=false, Message = "Invalid password." });
+            }
         }
     }
 }
